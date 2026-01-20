@@ -1,9 +1,15 @@
 {
-  "name": "fix_my_homepage",
-  "version": "1.0.0",
+  "name": "fix-my-homepage-problems",
+  "private": true,
+  "version": "0.0.0",
   "description": "문제 데이터 저장소 for Fix My Homepage",
   "scripts": {
-    "generate-index": "tsx scripts/generate-index.ts"
+    "create-problem": "tsx scripts/create-problem.ts",
+    "validate-problem": "tsx scripts/validate-problem.ts",
+    "dev-sandbox": "tsx dev-sandbox/dev-server.ts",
+    "generate-index": "tsx scripts/generate-index.ts",
+    "build": "turbo run build",
+    "publish-packages": "changeset publish"
   },
   "repository": {
     "type": "git",
@@ -12,8 +18,10 @@
   "author": "SeoJaeWan",
   "license": "MIT",
   "devDependencies": {
+    "@changesets/cli": "^2.29.8",
     "@types/node": "^20.0.0",
-    "tsx": "^4.0.0",
-    "typescript": "^5.0.0"
+    "tsx": "^4.7.0",
+    "turbo": "^1.11.0",
+    "typescript": "^5.3.3"
   }
 }
