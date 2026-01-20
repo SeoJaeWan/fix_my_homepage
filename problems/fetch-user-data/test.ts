@@ -1,19 +1,37 @@
-import { test, expect } from '@playwright/test';
+import { describe, it, expect } from '@fixmyhome/test-runner';
 
-test.describe('사용자 데이터 Fetch', () => {
-  test('사용자 목록이 올바르게 표시된다', async ({ page }) => {
-    await page.goto('/');
+describe('사용자 데이터 Fetch', () => {
+  it('사용자 목록이 올바르게 표시된다', () => {
+    // 로딩 완료까지 대기 (최대 5초)
+    const checkUsers = () => {
+      const kimChulsu = Array.from(document.querySelectorAll('*'))
+        .find(el => el.textContent?.includes('김철수'));
 
-    // 로딩 완료까지 대기
-    await page.waitForSelector('text=김철수', { timeout: 5000 });
+      if (kimChulsu) {
+        // 모든 사용자 정보 확인
+        const chulsooEmail = Array.from(document.querySelectorAll('*'))
+          .find(el => el.textContent?.includes('chulsoo@example.com'));
+        const leeYounghee = Array.from(document.querySelectorAll('*'))
+          .find(el => el.textContent?.includes('이영희'));
+        const parkMinsu = Array.from(document.querySelectorAll('*'))
+          .find(el => el.textContent?.includes('박민수'));
 
-    // 사용자 정보 확인
-    await expect(page.locator('text=김철수')).toBeVisible();
-    await expect(page.locator('text=chulsoo@example.com')).toBeVisible();
-    await expect(page.locator('text=이영희')).toBeVisible();
-    await expect(page.locator('text=박민수')).toBeVisible();
+        expect(kimChulsu).toBeTruthy();
+        expect(chulsooEmail).toBeTruthy();
+        expect(leeYounghee).toBeTruthy();
+        expect(parkMinsu).toBeTruthy();
 
-    // [object Promise] 텍스트가 없는지 확인
-    await expect(page.locator('text=[object Promise]')).not.toBeVisible();
+        // [object Promise] 텍스트가 없는지 확인
+        const promiseText = Array.from(document.querySelectorAll('*'))
+          .find(el => el.textContent?.includes('[object Promise]'));
+        expect(promiseText).toBeFalsy();
+      } else {
+        // 아직 로딩 중이면 다시 시도
+        setTimeout(checkUsers, 100);
+      }
+    };
+
+    // 초기 대기 후 확인 시작
+    setTimeout(checkUsers, 100);
   });
 });

@@ -1,12 +1,16 @@
-import { test, expect } from '@playwright/test';
+import { describe, it, expect } from '@fixmyhome/test-runner';
 
-test.describe('Problem Template', () => {
-  test('목표 달성 테스트', async ({ page }) => {
+describe('Problem Template', () => {
+  it('목표 달성 테스트', () => {
     // 테스트 시나리오 작성
-    await page.goto('/');
 
     // 예시: 버튼 클릭 테스트
-    // await page.click('button');
-    // await expect(page.locator('.success')).toBeVisible();
+    // const button = document.querySelector('button');
+    // button?.click();
+    //
+    // setTimeout(() => {
+    //   const successElement = document.querySelector('.success');
+    //   expect(successElement).toBeTruthy();
+    // }, 100);
   });
 });
