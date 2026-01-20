@@ -1,0 +1,19 @@
+{
+  "name": "fix_my_homepage",
+  "version": "1.0.0",
+  "description": "문제 데이터 저장소 for Fix My Homepage",
+  "scripts": {
+    "generate-index": "tsx scripts/generate-index.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/SeoJaeWan/fix_my_homepage.git"
+  },
+  "author": "SeoJaeWan",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "tsx": "^4.0.0",
+    "typescript": "^5.0.0"
+  }
+}

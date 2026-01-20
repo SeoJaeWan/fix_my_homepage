@@ -1,0 +1,18 @@
+{
+  "id": "button-not-clickable",
+  "title": "클릭되지 않는 버튼",
+  "situation": "쇼핑몰 상품 페이지입니다. 고객이 구매하기 버튼을 아무리 눌러도 반응이 없다고 합니다. 버튼이 보이긴 하지만 클릭이 되지 않습니다.",
+  "goals": [
+    "구매하기 버튼을 클릭해서 '구매 완료!' 메시지를 표시하세요"
+  ],
+  "environment": {
+    "type": "react",
+    "dependencies": {
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+    }
+  },
+  "author": {
+    "github": "SeoJaeWan"
+  }
+}

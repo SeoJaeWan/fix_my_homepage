@@ -1,0 +1,19 @@
+{
+  "id": "problem-id-kebab-case",
+  "title": "문제 제목",
+  "situation": "문제 상황 설명입니다. 사용자가 처한 상황을 구체적으로 서술하세요.",
+  "goals": [
+    "달성해야 할 목표 1",
+    "달성해야 할 목표 2"
+  ],
+  "environment": {
+    "type": "react",
+    "dependencies": {
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+    }
+  },
+  "author": {
+    "github": "your-github-username"
+  }
+}

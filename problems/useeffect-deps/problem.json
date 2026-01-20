@@ -1,0 +1,18 @@
+{
+  "id": "useeffect-deps",
+  "title": "검색어가 업데이트되지 않는 문제",
+  "situation": "검색창에 입력한 키워드로 실시간 검색을 하려는데, 처음 입력한 검색어로만 검색되고 이후에 검색어를 바꿔도 결과가 업데이트되지 않습니다.",
+  "goals": [
+    "검색어를 변경할 때마다 검색 결과가 실시간으로 업데이트되도록 수정하세요"
+  ],
+  "environment": {
+    "type": "react",
+    "dependencies": {
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+    }
+  },
+  "author": {
+    "github": "SeoJaeWan"
+  }
+}

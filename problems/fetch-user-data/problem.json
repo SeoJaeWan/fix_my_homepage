@@ -1,0 +1,18 @@
+{
+  "id": "fetch-user-data",
+  "title": "사용자 목록이 표시되지 않는 문제",
+  "situation": "서버에서 사용자 목록을 불러와서 화면에 표시하려고 하는데, '[object Promise]'라는 이상한 텍스트만 표시됩니다. API는 정상적으로 작동하는데 무엇이 문제일까요?",
+  "goals": [
+    "사용자 목록이 올바르게 표시되도록 수정하세요"
+  ],
+  "environment": {
+    "type": "react",
+    "dependencies": {
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+    }
+  },
+  "author": {
+    "github": "SeoJaeWan"
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "state-batch-update",
+  "title": "카운터가 1씩만 증가하는 문제",
+  "situation": "사용자가 '+3 증가' 버튼을 누르면 카운터가 3씩 증가해야 하는데, 실제로는 1씩만 증가합니다. setState를 3번 호출했는데 왜 1번만 적용될까요?",
+  "goals": [
+    "'+3 증가' 버튼을 클릭하면 카운터가 정확히 3씩 증가하도록 수정하세요"
+  ],
+  "environment": {
+    "type": "react",
+    "dependencies": {
+      "react": "^18.0.0",
+      "react-dom": "^18.0.0"
+    }
+  },
+  "author": {
+    "github": "SeoJaeWan"
+  }
+}

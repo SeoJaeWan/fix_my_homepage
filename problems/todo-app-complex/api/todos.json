@@ -1,0 +1,17 @@
+[
+  {
+    "id": 1,
+    "text": "React 공부하기",
+    "completed": false
+  },
+  {
+    "id": 2,
+    "text": "프로젝트 배포하기",
+    "completed": true
+  },
+  {
+    "id": 3,
+    "text": "코드 리뷰 받기",
+    "completed": false
+  }
+]
