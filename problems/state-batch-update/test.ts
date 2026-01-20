@@ -1,22 +1,33 @@
-import { test, expect } from '@playwright/test';
+import { describe, it, expect } from '@fixmyhome/test-runner';
 
-test.describe('카운터 배치 업데이트', () => {
-  test('+3 증가 버튼을 클릭하면 카운터가 3씩 증가한다', async ({ page }) => {
-    await page.goto('/');
+describe('카운터 배치 업데이트', () => {
+  it('+3 증가 버튼을 클릭하면 카운터가 3씩 증가한다', () => {
+    // 초기값 확인 - 카운터 숫자가 있는 div 찾기
+    const getCounterValue = () => {
+      const counterElement = document.querySelector('.text-6xl');
+      return counterElement?.textContent?.trim();
+    };
 
-    // 초기값 확인
-    await expect(page.locator('text=0').first()).toBeVisible();
+    expect(getCounterValue()).toBe('0');
 
-    // +3 증가 버튼 클릭
-    await page.click('button:has-text("+3 증가")');
+    // +3 증가 버튼 찾기 및 클릭
+    const incrementButton = Array.from(document.querySelectorAll('button'))
+      .find(btn => btn.textContent?.includes('+3 증가'));
 
-    // 3이 표시되는지 확인
-    await expect(page.locator('text=3').first()).toBeVisible();
+    expect(incrementButton).toBeTruthy();
+    incrementButton?.click();
 
-    // 한 번 더 클릭
-    await page.click('button:has-text("+3 증가")');
+    // React state 업데이트 대기 후 3 확인
+    setTimeout(() => {
+      expect(getCounterValue()).toBe('3');
 
-    // 6이 표시되는지 확인
-    await expect(page.locator('text=6').first()).toBeVisible();
+      // 한 번 더 클릭
+      incrementButton?.click();
+
+      // 다시 대기 후 6 확인
+      setTimeout(() => {
+        expect(getCounterValue()).toBe('6');
+      }, 100);
+    }, 100);
   });
 });
